@@ -1,0 +1,33 @@
+﻿<Window x:Class="TestForms.Forms.AplicarInt_detalleServ_form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AplicarInt_detalleServ_form" Height="528" Width="317" Background="WhiteSmoke" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label Content="ID (cód. CDP)" Height="30" HorizontalAlignment="Left" Margin="12,14,0,0" Name="label1" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,14,0,0" Name="textBoxID" VerticalAlignment="Top" Width="181" />
+        <Label Content="Empresa" Height="30" HorizontalAlignment="Left" Margin="12,50,0,0" Name="label2" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,50,0,0" Name="textBoxEmpresa" VerticalAlignment="Top" Width="181" />
+        <Label Content="Servicio" Height="30" HorizontalAlignment="Left" Margin="12,86,0,0" Name="label3" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,86,0,0" Name="textBoxServicio" VerticalAlignment="Top" Width="181" />
+        <Label Content="Origen" Height="30" HorizontalAlignment="Left" Margin="12,122,0,0" Name="label4" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,122,0,0" Name="textBoxOrigen" VerticalAlignment="Top" Width="181" />
+        <Label Content="Destino" Height="30" HorizontalAlignment="Left" Margin="12,158,0,0" Name="label5" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,158,0,0" Name="textBoxDestino" VerticalAlignment="Top" Width="181" />
+        <Label Content="Fecha salida" Height="30" HorizontalAlignment="Left" Margin="12,194,0,0" Name="label6" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,194,0,0" Name="textBoxFecSalida" VerticalAlignment="Top" Width="181" />
+        <Label Content="Monto" Height="30" HorizontalAlignment="Left" Margin="12,230,0,0" Name="label7" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,230,0,0" Name="textBoxMonto" VerticalAlignment="Top" Width="181" />
+        <Label Content="Calidad" Height="30" HorizontalAlignment="Left" Margin="12,266,0,0" Name="label8" VerticalAlignment="Top" Width="84" />
+        <RadioButton Content="Sin definir" Height="16" HorizontalAlignment="Left" Margin="102,271,0,0" Name="radioButtonSinDefinir" VerticalAlignment="Top" FontSize="10" />
+        <RadioButton Content="Semi cama SC" Height="16" HorizontalAlignment="Left" Margin="201,271,0,0" Name="radioButtonSemiCama" VerticalAlignment="Top" FontSize="10" />
+        <RadioButton Content="Cama EX" Height="16" HorizontalAlignment="Left" Margin="102,293,0,0" Name="radioButtonCamaEX" VerticalAlignment="Top" FontSize="10" />
+        <RadioButton Content="Cama CA" Height="16" HorizontalAlignment="Left" Margin="201,293,0,0" Name="radioButtonCamaCA" VerticalAlignment="Top" FontSize="10" />
+        <Label Content="Butacas libres" Height="30" HorizontalAlignment="Left" Margin="12,315,0,0" Name="label9" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,315,0,0" Name="textBoxButacas" VerticalAlignment="Top" Width="181" />
+        <Label Content="Total libres" Height="30" HorizontalAlignment="Left" Margin="12,351,0,0" Name="label10" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,351,0,0" Name="textBoxTotalLibres" VerticalAlignment="Top" Width="181" />
+        <Label Content="Agencia" Height="30" HorizontalAlignment="Left" Margin="12,387,0,0" Name="label11" VerticalAlignment="Top" Width="84" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="102,387,0,0" Name="textBoxAgencia" VerticalAlignment="Top" Width="181" />
+        <Button Content="OK" Height="30" HorizontalAlignment="Left" Margin="81,436,0,0" Name="button1" VerticalAlignment="Top" Width="142" Click="button1_Click" />
+    </Grid>
+</Window>

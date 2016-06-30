@@ -1,0 +1,11 @@
+﻿<Window x:Class="TestForms.Forms.AplicarInt_form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AplicarInt_form" Height="496" Width="326" Background="WhiteSmoke" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Button Content="Agregar servicio..." Height="30" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="280" Click="button1_Click" />
+        <ListView Height="132" HorizontalAlignment="Left" Margin="12,52,0,0" Name="listView1" VerticalAlignment="Top" Width="280" />
+        <Button Content="Enviar" Height="30" HorizontalAlignment="Left" Margin="12,195,0,0" Name="button2" VerticalAlignment="Top" Width="280" Click="button2_Click" />
+        <TextBlock Height="210" HorizontalAlignment="Left" Margin="12,235,0,0" Name="textBlock1" Text="" VerticalAlignment="Top" Width="280" Background="White" />
+    </Grid>
+</Window>

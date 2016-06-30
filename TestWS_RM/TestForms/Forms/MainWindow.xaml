@@ -1,0 +1,19 @@
+﻿<Window x:Class="TestForms.Forms.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Background="WhiteSmoke" ResizeMode="CanMinimize" Height="476" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Test Web service RM" Height="30" HorizontalAlignment="Left" Margin="117,26,0,0" Name="label1" VerticalAlignment="Top" Width="280" />
+        <Button Content="1) reglasActivasAgencia" Height="30" HorizontalAlignment="Left" Margin="117,71,0,0" Name="button1" VerticalAlignment="Top" Width="280" ToolTip="Devuelve las reglas activas de una agencia en la fecha/hora actual" Click="button1_Click" />
+        <Button Content="2) desactivaRegla" Height="30" HorizontalAlignment="Left" Margin="117,111,0,0" Name="button2" VerticalAlignment="Top" Width="280" ToolTip="Desactiva una regla aplicada" Click="button2_Click" />
+        <Button Content="3) aplicarInt" Height="30" HorizontalAlignment="Left" Margin="117,151,0,0" Name="button3" VerticalAlignment="Top" Width="280" ToolTip="Devuelve las reglas aplicadas, promociones y articulos a los servicios enviados" Click="button3_Click" />
+        <Button Content="4) articuloDatosCompletos" Height="30" HorizontalAlignment="Left" Margin="117,191,0,0" Name="button4" VerticalAlignment="Top" Width="280" ToolTip="Devuelve datos completos de un articulo" />
+        <Button Content="5) promocionDatosCompletos" Height="30" HorizontalAlignment="Left" Margin="117,231,0,0" Name="button5" VerticalAlignment="Top" Width="280" ToolTip="Devuelve datos completos de una promocion" Click="button5_Click" />
+        <Button Content="6) ventasRealizadas" Height="30" HorizontalAlignment="Left" Margin="117,271,0,0" Name="button6" VerticalAlignment="Top" Width="280" ToolTip="Permite la carga las ventas realizadas" />
+        <Label Content="Cliente" Height="20" HorizontalAlignment="Left" Margin="117,368,0,0" Name="label2" VerticalAlignment="Top" Width="130" FontSize="9" />
+        <Label Content="Clave" HorizontalAlignment="Left" Margin="268,368,0,0" Name="label3" Width="129" Height="20" VerticalAlignment="Top" FontSize="9" />
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="117,392,0,0" Name="textBox1" VerticalAlignment="Top" Width="130" FontSize="10" IsEnabled="False" Background="LightGray"/>
+        <TextBox Height="19" HorizontalAlignment="Left" Margin="267,392,0,0" Name="textBox2" VerticalAlignment="Top" Width="130" FontSize="10" IsEnabled="False" Background="LightGray" />
+        <CheckBox Content="Editar" Height="16" HorizontalAlignment="Left" Margin="233,346,0,0" Name="checkBox1" VerticalAlignment="Top" IsChecked="False" Click="checkBox1_Click" />
+    </Grid>
+</Window>

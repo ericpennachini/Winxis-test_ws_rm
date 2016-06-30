@@ -1,0 +1,157 @@
+	Renueve management WS - WSIntCom.asmx
+FUNCIONES
+1. reglasActivasAgencia: devuelve las reglas activas de una agencia en la fecha/hora actual.
+2. desactivaRegla: desactiva una regla aplicada.
+3. aplicarInt: devuelve las reglas aplicadas, promociones y articulos a los servicios enviados.  
+4. articuloDatosCompletos: devuelve datos completos de un articulo.
+5. promocionDatosCompletos: devuelve datos completos de una promocion.
+6. ventasRealizadas: permite la carga las ventas realizadas.
+
+1. reglasActivasAgencia
+Entrada
+- agencia: id de agencia
+- _cliente: id de cliente (proporcionado por RM)
+- _clave: clave (proporcionado por RM)
+
+Salida
+- TreglasActivasResp
+  - reglas: lista de reglas
+    - id: id de la regla
+    - origen: codigo de parada de origen
+    - destino: codigo de parada destino
+    - fechas: lista de fechas donde esta aplicada la regla
+  - error: codigo de error o cero en caso de no tenerlo.
+  - descError: descripcion del error o vacio en caso de no tenerlo.
+  
+2. desactivaRegla
+Entrada
+- regla: id de regla
+- fecha: fecha a quitar la aplicacion de la regla
+- _cliente: id de cliente (proporcionado por RM)
+- _clave: clave (proporcionado por RM)
+
+Salida
+- Tresp
+  - error: codigo de error o cero en caso de no tenerlo.
+  - descError: descripcion del error o vacio en caso de no tenerlo.
+
+3. aplicarInt  
+Entrada
+- Lista Tservicios
+  - id: codigo CDP.  
+  - empresa: id de empresa.
+  - servicio: id del servicio.
+  - origen: id de parada origen. 
+  - destino: id de parada destino.
+  - salida: fecha de salida del servicio. (dd/MM/yy HH:mm)
+  - monto: monto del servicio.
+  - calidad: codigo calidad del servicio.
+  - butacas: cantidad de butacas libres de la calidad.
+  - libresTotal: cantidad de butacas libres totales.
+  - id agencia: id de agencia usada.
+- _cliente: id de cliente (proporcionado por RM)
+- _clave: clave (proporcionado por RM)
+
+Salida
+- TAplicarIntResp
+  - lista TserviciosResp
+    - id: codigo CDP.
+    - empresa: id de empresa.
+    - servicio: id del servicio.
+    - monto: monto del servicio modificado si corresponde.
+    - calidad: calidad del servicio.
+    - codigo1: id de la primer regla aplicada. (cero si no hay)
+    - codigo2: id de la segunda regla aplicada. (cero si no hay)
+    - texto1: texto de la primera regla aplicada si corresponde.
+    - texto2: texto de la segunda regla aplicada si corresponde.
+    - articulo1
+      - id: id del articulo.
+      - nombre: nombre del articulo.
+      - precio: precio del articulo.
+    - articulo2
+      - id: id del articulo.
+      - nombre: nombre del articulo.
+      - precio: precio del articulo.
+    - promocion
+      - id: id promocion.
+      - codigo: codigo de la promocion.
+      - tipo descuento: porcentaje (1) o monto fijo (2) 
+      - descuento: porcentaje o monto fijo de descuento.
+    - packDescuentos
+      - descuento2: porcentaje descuento 2 pasajeros.
+      - descuento3: porcentaje descuento 3 pasajeros.
+      - descuento4: porcentaje descuento 4 pasajeros.
+      - descuento5: porcentaje descuento mas de 4 pasajeros.
+  - error: codigo de error o cero en caso de no tenerlo.
+  - descError: descripcion del error o vacio en caso de no tenerlo.
+    
+4. articuloDatosCompletos
+Entrada
+- articulo: id de articulo
+- _cliente: id de cliente (proporcionado por RM)
+- _clave: clave (proporcionado por RM)
+      
+Salida
+- TarticuloResp
+    - descripcion: nombre del articulo
+    - detalle: descripcion larga del articulo.
+    - medida: unidad de medida del articulo.
+    - precio: precio del articulo.
+    - legales: texto legal del articulo.
+    - plantillaEmailProveedor: codigo planilla email proveedor.
+    - plantillaVoucherProveedor: codigo planilla voucher proveedor.
+    - plantillaEmailPasajero: codigo planilla email pasajero.
+    - imagen: ruta completa a la imagen o vacio si no tiene.
+    - error: codigo de error o cero en caso de no tenerlo.
+    - descError: descripcion del error o vacio en caso de no tenerlo.
+
+5. promocionDatosCompletos	
+Entrada
+- promocion: id de promocion
+- _cliente: id de cliente (proporcionado por RM)
+- _clave: clave (proporcionado por RM)
+      
+Salida
+- TpromocionResp
+    - codigo: codigo de la promocion.
+    - descripcion: descripcion de la promocion
+    - detalle: descripcion larga de la promocion.
+    - descuento: porcentaje o monto fijo de descuento.
+    - legales: texto legal de la promocion.
+    - imagen: ruta completa a la imagen o vacio si no tiene.
+    - porcentajeMayorista: porcentaje del mayorista. 
+    - porcentajeTransportista: porcentaje del transportista.
+    - error: codigo de error o cero en caso de no tenerlo.
+    - descError: descripcion del error o vacio en caso de no tenerlo.
+          
+6. ventasRealizadas
+Entrada
+- Lista Tventa
+  - empresa: id de empresa.
+  - servicio: id de servicio.
+  - agencia: id de agencia.
+  - salida: fecha de salida del servicio (dd/MM/yy HH:mm)
+  - calidad: id de calidad del servicio.
+  - pasajeros: cantidad de pasajeros.
+  - origen: id de origen.
+  - destino: id destino.
+  - montoSinDescuento: monto sin aplicar ningun modificador de descuento o recargo.
+  - monto: monto de la venta.
+  - idVenta: identificador de la venta CDP.
+  - fecha: fecha de la venta. (dd/MM/yy HH:mm) 
+  - descuentoPack: monto de descuento por pack aplicado.
+  - articulo1: id articulo 1 vendido. (cero en caso de no tener) 
+  - cantArticulo1: cantidad de unidades vendidas articulo 1.
+  - articulo2: id articulo 2 vendido. (cero en caso de no tener) 
+  - cantArticulo2: cantidad de unidades vendidas articulo 2.
+  - promocion: id de promocion. (cero en caso de no tener)
+  - regla1: id regla1. (cero en caso de no tener) 
+  - regla2: id regla2. (cero en caso de no tener)
+  
+- _cliente: id de cliente (proporcionado por RM)
+- _clave: clave (proporcionado por RM)
+          
+Salida
+- Tresp
+  - error: codigo de error o cero en caso de no tenerlo.
+  - descError: descripcion del error o vacio en caso de no tenerlo.

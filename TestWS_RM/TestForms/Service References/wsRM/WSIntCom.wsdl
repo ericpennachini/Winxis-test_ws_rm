@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="devReglas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="devReglasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="devReglasResult" type="tns:ArrayOfRegla" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRegla">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Regla" nillable="true" type="tns:Regla" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Regla">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="desactivaRegla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="regla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="desactivaReglaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="desactivaReglaResult" type="tns:Tresp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Tresp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="error" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="reglasActivasAgencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reglasActivasAgenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reglasActivasAgenciaResult" type="tns:TreglasActivasResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TreglasActivasResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="reglas" type="tns:ArrayOfTreglasActiva" />
+          <s:element minOccurs="1" maxOccurs="1" name="error" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTreglasActiva">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TreglasActiva" nillable="true" type="tns:TreglasActiva" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TreglasActiva">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fechas" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="aplicarInt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="servicios" type="tns:ArrayOfTservicios" />
+            <s:element minOccurs="0" maxOccurs="1" name="_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTservicios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tservicios" nillable="true" type="tns:Tservicios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tservicios">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="salida" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="calidad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="butacas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LibresTotal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="aplicarIntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aplicarIntResult" type="tns:TAplicarIntResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TAplicarIntResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="servicios" type="tns:ArrayOfTserviciosResp" />
+          <s:element minOccurs="1" maxOccurs="1" name="error" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTserviciosResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TserviciosResp" nillable="true" type="tns:TserviciosResp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TserviciosResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="calidad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigo1" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigo2" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="texto1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="texto2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="articulo1" type="tns:Tarticulo" />
+          <s:element minOccurs="0" maxOccurs="1" name="articulo2" type="tns:Tarticulo" />
+          <s:element minOccurs="0" maxOccurs="1" name="promocion" type="tns:Tpromocion" />
+          <s:element minOccurs="0" maxOccurs="1" name="packDescuentos" type="tns:TpackDescuentos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tarticulo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tpromocion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuento" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TpackDescuentos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="descuento2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuento3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuento4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuento5" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ventasRealizadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ventas" type="tns:ArrayOfTventa" />
+            <s:element minOccurs="0" maxOccurs="1" name="_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTventa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tventa" nillable="true" type="tns:Tventa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tventa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="salida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="calidad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pasajeros" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="origen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destino" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="montoSinDescuento" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="idVenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuentoPack" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="articulo1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cantArticulo1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="articulo2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cantArticulo2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="promocion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regla1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="regla2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ventasRealizadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ventasRealizadasResult" type="tns:Tresp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="articuloDatosCompletos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="articulo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="articuloDatosCompletosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="articuloDatosCompletosResult" type="tns:TarticuloResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TarticuloResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detalle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="medida" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="legales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantillaEmailProveedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantillaVoucherProveedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plantillaEmailPasajero" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="error" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="promocionDatosCompletos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="promocion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="promocionDatosCompletosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="promocionDatosCompletosResult" type="tns:TpromocionResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TpromocionResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detalle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="descuento" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="legales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="porcentajeTransportista" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="porcentajeMayorista" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="error" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="devReglasSoapIn">
+    <wsdl:part name="parameters" element="tns:devReglas" />
+  </wsdl:message>
+  <wsdl:message name="devReglasSoapOut">
+    <wsdl:part name="parameters" element="tns:devReglasResponse" />
+  </wsdl:message>
+  <wsdl:message name="desactivaReglaSoapIn">
+    <wsdl:part name="parameters" element="tns:desactivaRegla" />
+  </wsdl:message>
+  <wsdl:message name="desactivaReglaSoapOut">
+    <wsdl:part name="parameters" element="tns:desactivaReglaResponse" />
+  </wsdl:message>
+  <wsdl:message name="reglasActivasAgenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:reglasActivasAgencia" />
+  </wsdl:message>
+  <wsdl:message name="reglasActivasAgenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:reglasActivasAgenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="aplicarIntSoapIn">
+    <wsdl:part name="parameters" element="tns:aplicarInt" />
+  </wsdl:message>
+  <wsdl:message name="aplicarIntSoapOut">
+    <wsdl:part name="parameters" element="tns:aplicarIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="ventasRealizadasSoapIn">
+    <wsdl:part name="parameters" element="tns:ventasRealizadas" />
+  </wsdl:message>
+  <wsdl:message name="ventasRealizadasSoapOut">
+    <wsdl:part name="parameters" element="tns:ventasRealizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="articuloDatosCompletosSoapIn">
+    <wsdl:part name="parameters" element="tns:articuloDatosCompletos" />
+  </wsdl:message>
+  <wsdl:message name="articuloDatosCompletosSoapOut">
+    <wsdl:part name="parameters" element="tns:articuloDatosCompletosResponse" />
+  </wsdl:message>
+  <wsdl:message name="promocionDatosCompletosSoapIn">
+    <wsdl:part name="parameters" element="tns:promocionDatosCompletos" />
+  </wsdl:message>
+  <wsdl:message name="promocionDatosCompletosSoapOut">
+    <wsdl:part name="parameters" element="tns:promocionDatosCompletosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSIntComSoap">
+    <wsdl:operation name="devReglas">
+      <wsdl:input message="tns:devReglasSoapIn" />
+      <wsdl:output message="tns:devReglasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="desactivaRegla">
+      <wsdl:input message="tns:desactivaReglaSoapIn" />
+      <wsdl:output message="tns:desactivaReglaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reglasActivasAgencia">
+      <wsdl:input message="tns:reglasActivasAgenciaSoapIn" />
+      <wsdl:output message="tns:reglasActivasAgenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="aplicarInt">
+      <wsdl:input message="tns:aplicarIntSoapIn" />
+      <wsdl:output message="tns:aplicarIntSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ventasRealizadas">
+      <wsdl:input message="tns:ventasRealizadasSoapIn" />
+      <wsdl:output message="tns:ventasRealizadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="articuloDatosCompletos">
+      <wsdl:input message="tns:articuloDatosCompletosSoapIn" />
+      <wsdl:output message="tns:articuloDatosCompletosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="promocionDatosCompletos">
+      <wsdl:input message="tns:promocionDatosCompletosSoapIn" />
+      <wsdl:output message="tns:promocionDatosCompletosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSIntComSoap" type="tns:WSIntComSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="devReglas">
+      <soap:operation soapAction="http://tempuri.org/devReglas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desactivaRegla">
+      <soap:operation soapAction="http://tempuri.org/desactivaRegla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reglasActivasAgencia">
+      <soap:operation soapAction="http://tempuri.org/reglasActivasAgencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aplicarInt">
+      <soap:operation soapAction="http://tempuri.org/aplicarInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ventasRealizadas">
+      <soap:operation soapAction="http://tempuri.org/ventasRealizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="articuloDatosCompletos">
+      <soap:operation soapAction="http://tempuri.org/articuloDatosCompletos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="promocionDatosCompletos">
+      <soap:operation soapAction="http://tempuri.org/promocionDatosCompletos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSIntComSoap12" type="tns:WSIntComSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="devReglas">
+      <soap12:operation soapAction="http://tempuri.org/devReglas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desactivaRegla">
+      <soap12:operation soapAction="http://tempuri.org/desactivaRegla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reglasActivasAgencia">
+      <soap12:operation soapAction="http://tempuri.org/reglasActivasAgencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="aplicarInt">
+      <soap12:operation soapAction="http://tempuri.org/aplicarInt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ventasRealizadas">
+      <soap12:operation soapAction="http://tempuri.org/ventasRealizadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="articuloDatosCompletos">
+      <soap12:operation soapAction="http://tempuri.org/articuloDatosCompletos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="promocionDatosCompletos">
+      <soap12:operation soapAction="http://tempuri.org/promocionDatosCompletos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSIntCom">
+    <wsdl:port name="WSIntComSoap" binding="tns:WSIntComSoap">
+      <soap:address location="http://201.213.133.91:5007/WSIntCom.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSIntComSoap12" binding="tns:WSIntComSoap12">
+      <soap12:address location="http://201.213.133.91:5007/WSIntCom.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
