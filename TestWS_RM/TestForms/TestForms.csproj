@@ -72,6 +72,12 @@
     <Compile Include="Forms\ReglasActivasAgencia_form.xaml.cs">
       <DependentUpon>ReglasActivasAgencia_form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VentasRealizadas_detalle_form.xaml.cs">
+      <DependentUpon>VentasRealizadas_detalle_form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VentasRealizadas_form.xaml.cs">
+      <DependentUpon>VentasRealizadas_form.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\wsRM\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +112,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\ReglasActivasAgencia_form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\VentasRealizadas_detalle_form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\VentasRealizadas_form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,7 +189,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\ícono.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Testing WS REVENUE MANAGMENT\TestWS_RM\TestForms\obj\x86\Debug\
+C:\Users\Eric\Documents\GitHub\Winxis-test_ws_rm\TestWS_RM\TestForms\obj\x86\Debug\
 TestForms
 none
 false
 DEBUG;TRACE
-D:\Testing WS REVENUE MANAGMENT\TestWS_RM\TestForms\App.xaml
-6427127567
+C:\Users\Eric\Documents\GitHub\Winxis-test_ws_rm\TestWS_RM\TestForms\App.xaml
+8-1345569139
 
-12506623809
+14845664528
 14637617180
-Forms\AplicarInt_detalleServ_form.xaml;Forms\AplicarInt_form.xaml;Forms\DesactivaRegla_form.xaml;Forms\MainWindow.xaml;Forms\PromocionDatosCompletos_form.xaml;Forms\ReglasActivasAgencia_form.xaml;
+Forms\AplicarInt_detalleServ_form.xaml;Forms\AplicarInt_form.xaml;Forms\DesactivaRegla_form.xaml;Forms\MainWindow.xaml;Forms\PromocionDatosCompletos_form.xaml;Forms\ReglasActivasAgencia_form.xaml;Forms\VentasRealizadas_detalle_form.xaml;Forms\VentasRealizadas_form.xaml;
 
 False
 

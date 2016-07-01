@@ -25,6 +25,12 @@ namespace TestForms.Forms
 
         }
 
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string fecha = datePicker1.Text.Trim();
+            Test_desactivaRegla(textBox1.Text, fecha, MainWindow.CLIENTE, MainWindow.CLAVE);
+        }
+
         private void Test_desactivaRegla(string regla, string fecha, string _cliente, string _clave)
         {
             Tresp resDesactivaRegla = MainWindow.WEB_SERVICE_RM.desactivaRegla(regla, fecha, _cliente, _clave);
@@ -38,14 +44,6 @@ namespace TestForms.Forms
                 textBlock1.Text += "Código: " + resDesactivaRegla.error + "\n";
                 textBlock1.Text += "Descripción: " + resDesactivaRegla.descError;
             }
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            string fecha = datePicker1.Text.Trim();
-            string hora = textBoxHoras.Text + ":" + textBoxMinutos.Text.Trim();
-            string fechaHora = fecha + " " + hora;
-            Test_desactivaRegla(textBox1.Text, fechaHora, MainWindow.CLIENTE, MainWindow.CLAVE);
         }
 
 

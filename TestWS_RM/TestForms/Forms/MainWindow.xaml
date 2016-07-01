@@ -1,7 +1,7 @@
 ﻿<Window x:Class="TestForms.Forms.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Background="WhiteSmoke" ResizeMode="CanMinimize" Height="476" Width="525" WindowStartupLocation="CenterScreen">
+        Title="Revenue Managment (test web service)" Background="WhiteSmoke" ResizeMode="CanMinimize" Height="476" Width="525" WindowStartupLocation="CenterScreen" Icon="/TestForms;component/Images/ícono.png">
     <Grid>
         <Label Content="Test Web service RM" Height="30" HorizontalAlignment="Left" Margin="117,26,0,0" Name="label1" VerticalAlignment="Top" Width="280" />
         <Button Content="1) reglasActivasAgencia" Height="30" HorizontalAlignment="Left" Margin="117,71,0,0" Name="button1" VerticalAlignment="Top" Width="280" ToolTip="Devuelve las reglas activas de una agencia en la fecha/hora actual" Click="button1_Click" />

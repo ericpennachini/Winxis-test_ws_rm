@@ -34,7 +34,7 @@ namespace TestConsola
                     Console.Clear();
                     Console.Write("Regla a desactivar: ");
                     string regla = Console.ReadLine();
-                    Test_desactivaRegla(regla, "24/06/2016", _cliente, _clave);
+                    Test_desactivaRegla(regla, "28/06/2016", _cliente, _clave);
                     break;
                 case "3":
                     Console.Clear();
@@ -70,6 +70,32 @@ namespace TestConsola
                     break;
                 case "6":
                     Console.Clear();
+                    List<Tventa> ventas = new List<Tventa>();
+                    Tventa venta = new Tventa();
+                    #region datos
+                    venta.empresa = "FBU";
+                    venta.servicio = "F001";
+                    venta.agencia = "4";
+                    venta.salida = "01/07/16 17:00";
+                    venta.calidad = "1";
+                    venta.pasajeros = 10;
+                    venta.origen = "1";
+                    venta.destino = "3624";
+                    venta.montoSinDescuento = 1000M;
+                    venta.monto = 800M;
+                    venta.idVenta = "5111444";
+                    venta.fecha = "01/07/16 10:54";
+                    venta.descuentoPack = 0;
+                    venta.articulo1 = "0";
+                    venta.cantArticulo1 = "0";
+                    venta.articulo2 = "0";
+                    venta.cantArticulo2 = "0";
+                    venta.promocion = "0";
+                    venta.regla1 = "106";
+                    venta.regla2 = "0";
+                    ventas.Add(venta);
+                    Test_ventasRealizadas(ventas, _cliente, _clave);
+                    #endregion
                     break;
                 default:
                     Console.WriteLine("ERROR...");
@@ -215,6 +241,25 @@ namespace TestConsola
             Console.WriteLine("_ Error -> " + response.error);
             Console.WriteLine("_ Desc. del error -> " + response.descError);
 
+            Console.ReadKey();
+        }
+
+        // - 6 -
+        private static void Test_ventasRealizadas(List<Tventa> listaVentas, string _cliente, string _clave)
+        {
+            Tresp response = ws.ventasRealizadas(listaVentas.ToArray(), _cliente, _clave);
+
+            if (response.error != 0)
+            {
+                Console.WriteLine("ERRORES: ");
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("Cod. de error -> " + response.error);
+                Console.WriteLine("Descripción -> " + response.descError);
+            }
+            else
+            {
+                Console.WriteLine("OK!");
+            }
             Console.ReadKey();
         }
 

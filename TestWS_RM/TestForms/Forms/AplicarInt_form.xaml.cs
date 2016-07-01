@@ -99,7 +99,7 @@ namespace TestForms.Forms
             else
             {
                 textoRta += "\nError -> " + response.error;
-                textoRta += "\nDescripción del error -> " + response.descError;
+                textoRta += "\nDescripción -> " + response.descError;
             }
 
             textBlock1.Text = textoRta;

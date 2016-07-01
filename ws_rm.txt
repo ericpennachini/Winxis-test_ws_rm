@@ -1,4 +1,5 @@
-	Renueve management WS - WSIntCom.asmx
+Renueve management WS - WSIntCom.asmx
+
 FUNCIONES
 1. reglasActivasAgencia: devuelve las reglas activas de una agencia en la fecha/hora actual.
 2. desactivaRegla: desactiva una regla aplicada.
