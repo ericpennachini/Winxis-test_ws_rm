@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Eric\Documents\GitHub\Winxis-test_ws_rm\TestWS_RM\TestForms\App.xaml
-8-1345569139
+10-305465372
 
-14845664528
+171694863952
 14637617180
-Forms\AplicarInt_detalleServ_form.xaml;Forms\AplicarInt_form.xaml;Forms\DesactivaRegla_form.xaml;Forms\MainWindow.xaml;Forms\PromocionDatosCompletos_form.xaml;Forms\ReglasActivasAgencia_form.xaml;Forms\VentasRealizadas_detalle_form.xaml;Forms\VentasRealizadas_form.xaml;
+Forms\AplicarInt_detalleServ_form.xaml;Forms\AplicarInt_form.xaml;Forms\ArticuloDatosCompletos_form.xaml;Forms\DesactivaRegla_form.xaml;Forms\MainWindow.xaml;Forms\PromocionDatosCompletos_form.xaml;Forms\ReglasActivasAgencia_form.xaml;Forms\test_scrollViewer.xaml;Forms\VentasRealizadas_detalle_form.xaml;Forms\VentasRealizadas_form.xaml;
 
 False
 

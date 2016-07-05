@@ -40,12 +40,28 @@ namespace TestConsola
                     Console.Clear();
                     List<Tservicios> servicios = new List<Tservicios>();
                     Tservicios tserv = new Tservicios();
-                    #region datos
-		            tserv.id = 1; // código CDP ¿?¿?
+                    #region datos 1
+		            tserv.id = 5222444; // código CDP ¿?¿?
                     tserv.empresa = "2";
                     tserv.servicio = "F001";
-                    tserv.origen = "6254";
-                    tserv.destino = "6273";
+                    tserv.origen = "1";
+                    tserv.destino = "3624";
+                    tserv.salida = "30/06/16 12:00";
+                    tserv.monto = 300F;
+                    tserv.calidad = "2"; // Semi cama SC
+                    tserv.butacas = 0;
+                    tserv.LibresTotal = 2;
+                    tserv.agencia = ""; 
+	                #endregion
+                    servicios.Add(tserv);
+                    #region datos 2
+                    tserv = null;
+                    tserv = new Tservicios();
+		            tserv.id = 5222444; // código CDP ¿?¿?
+                    tserv.empresa = "2";
+                    tserv.servicio = "F001";
+                    tserv.origen = "1";
+                    tserv.destino = "3624";
                     tserv.salida = "30/06/16 12:00";
                     tserv.monto = 300F;
                     tserv.calidad = "2"; // Semi cama SC

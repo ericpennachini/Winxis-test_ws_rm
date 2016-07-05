@@ -43,7 +43,17 @@ namespace TestForms.Forms
 
         private void Test_aplicarInt(List<Tservicios> listaServicios, string _cliente, string _clave)
         {
-            TAplicarIntResp response = MainWindow.WEB_SERVICE_RM.aplicarInt(listaServicios.ToArray(), _cliente, _clave);
+            TAplicarIntResp response = new TAplicarIntResp();
+            try
+            {
+                response = MainWindow.WEB_SERVICE_RM.aplicarInt(listaServicios.ToArray(), _cliente, _clave);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Mensajes.ErrorWs + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+                return;
+            }
             List<TserviciosResp> itemsResponse = response.servicios.ToList<TserviciosResp>();
             String textoRta = "";
 

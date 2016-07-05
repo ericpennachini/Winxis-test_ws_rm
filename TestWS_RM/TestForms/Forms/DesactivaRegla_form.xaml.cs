@@ -22,7 +22,6 @@ namespace TestForms.Forms
         public DesactivaRegla_form()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -33,7 +32,17 @@ namespace TestForms.Forms
 
         private void Test_desactivaRegla(string regla, string fecha, string _cliente, string _clave)
         {
-            Tresp resDesactivaRegla = MainWindow.WEB_SERVICE_RM.desactivaRegla(regla, fecha, _cliente, _clave);
+            Tresp resDesactivaRegla = new Tresp();
+            try
+            {
+                resDesactivaRegla = MainWindow.WEB_SERVICE_RM.desactivaRegla(regla, fecha, _cliente, _clave);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Mensajes.ErrorWs + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+                return;
+            }
             if (resDesactivaRegla.error == 0)
             {
                 textBlock1.Text = "OK \nRegla desactivada con éxito!";

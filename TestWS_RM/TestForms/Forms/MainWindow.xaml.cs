@@ -77,5 +77,32 @@ namespace TestForms.Forms
             form5.Owner = this;
             form5.Show();
         }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            VentasRealizadas_form form6 = new VentasRealizadas_form();
+            form6.Owner = this;
+            form6.Show();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            ArticuloDatosCompletos_form form4 = new ArticuloDatosCompletos_form();
+            form4.Owner = this;
+            form4.Show();
+        }
+
+        /// <summary>
+        /// Testeo de funciones varias
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            test_scrollViewer formTest = new test_scrollViewer();
+            formTest.Owner = this;
+            formTest.textBlock1.Text = "asldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd\nasldkjfhalskjdfhalskjdfhalksjdfhajskdoqiwueryqiowerjsdfasd";
+            formTest.Show();
+        }
     }
 }

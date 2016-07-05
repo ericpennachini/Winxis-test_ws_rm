@@ -63,6 +63,9 @@
     <Compile Include="Forms\AplicarInt_form.xaml.cs">
       <DependentUpon>AplicarInt_form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ArticuloDatosCompletos_form.xaml.cs">
+      <DependentUpon>ArticuloDatosCompletos_form.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DesactivaRegla_form.xaml.cs">
       <DependentUpon>DesactivaRegla_form.xaml</DependentUpon>
     </Compile>
@@ -72,11 +75,19 @@
     <Compile Include="Forms\ReglasActivasAgencia_form.xaml.cs">
       <DependentUpon>ReglasActivasAgencia_form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\test_scrollViewer.xaml.cs">
+      <DependentUpon>test_scrollViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VentasRealizadas_detalle_form.xaml.cs">
       <DependentUpon>VentasRealizadas_detalle_form.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\VentasRealizadas_form.xaml.cs">
       <DependentUpon>VentasRealizadas_form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
     </Compile>
     <Compile Include="Service References\wsRM\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\AplicarInt_form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\ArticuloDatosCompletos_form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,6 +130,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\test_scrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\VentasRealizadas_detalle_form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +157,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Mensajes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -191,6 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ícono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TestForms.wsRM;
 
 namespace TestForms.Forms
 {
@@ -18,9 +19,51 @@ namespace TestForms.Forms
     /// </summary>
     public partial class VentasRealizadas_form : Window
     {
+        public List<Tventa> ListaVentas { get; set; }
+
         public VentasRealizadas_form()
         {
             InitializeComponent();
+            ListaVentas = new List<Tventa>();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            VentasRealizadas_detalle_form form6_1 = new VentasRealizadas_detalle_form();
+            form6_1.Owner = this;
+            form6_1.Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Tresp response = new Tresp();
+            try
+            {
+                response = MainWindow.WEB_SERVICE_RM.ventasRealizadas(ListaVentas.ToArray(), MainWindow.CLIENTE, MainWindow.CLAVE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Mensajes.ErrorWs + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+                return;
+            }
+            string textoRta = "";
+
+            if (response.error != 0)
+            {
+                textoRta += "ERRORES: ";
+                textoRta += "-------------------------";
+                textoRta += "Cod. de error -> " + response.error;
+                textoRta += "Descripción -> " + response.descError;
+            }
+            else
+            {
+                textoRta += "OK!";
+            }
+
+            textBlock1.Text = textoRta;
+        }
+
+
     }
 }

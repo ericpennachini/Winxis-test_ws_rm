@@ -26,7 +26,17 @@ namespace TestForms.Forms
 
         private void Test_reglasActivasAgencia(string agencia, string _cliente, string _clave)
         {
-            TreglasActivasResp reglasActivas = MainWindow.WEB_SERVICE_RM.reglasActivasAgencia(agencia, _cliente, _clave);
+            TreglasActivasResp reglasActivas = new TreglasActivasResp();
+            try
+            {
+                reglasActivas = MainWindow.WEB_SERVICE_RM.reglasActivasAgencia(agencia, _cliente, _clave);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Mensajes.ErrorWs + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+                return;
+            }
 
             String textoRta = "";
             
@@ -36,10 +46,10 @@ namespace TestForms.Forms
                 textoRta += "Descripción -> " + r.descripcion + "\n";
                 textoRta += "Origen -> " + r.origen + "\n";
                 textoRta += "Destino -> " + r.destino + "\n";
-                textoRta += "Fechas -> ";
+                textoRta += "Fechas -> \n";
                 foreach (var f in r.fechas)
                 {
-                    textoRta += f + " ";
+                    textoRta += "    " + f + "\n";
                 }
                 textoRta += "\n-------------\n";
             }
