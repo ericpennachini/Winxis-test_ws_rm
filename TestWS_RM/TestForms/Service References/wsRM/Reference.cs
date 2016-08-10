@@ -645,6 +645,8 @@ namespace TestForms.wsRM {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TestForms.wsRM.TpackDescuentos packDescuentosField;
         
+        private int exclusivaField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -820,6 +822,19 @@ namespace TestForms.wsRM {
                 if ((object.ReferenceEquals(this.packDescuentosField, value) != true)) {
                     this.packDescuentosField = value;
                     this.RaisePropertyChanged("packDescuentos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public int exclusiva {
+            get {
+                return this.exclusivaField;
+            }
+            set {
+                if ((this.exclusivaField.Equals(value) != true)) {
+                    this.exclusivaField = value;
+                    this.RaisePropertyChanged("exclusiva");
                 }
             }
         }
@@ -1693,6 +1708,9 @@ namespace TestForms.wsRM {
         private string legalesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string detalleCortoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string imagenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1782,6 +1800,19 @@ namespace TestForms.wsRM {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string detalleCorto {
+            get {
+                return this.detalleCortoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.detalleCortoField, value) != true)) {
+                    this.detalleCortoField = value;
+                    this.RaisePropertyChanged("detalleCorto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string imagen {
             get {
                 return this.imagenField;
@@ -1794,7 +1825,7 @@ namespace TestForms.wsRM {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string porcentajeTransportista {
             get {
                 return this.porcentajeTransportistaField;
@@ -1807,7 +1838,7 @@ namespace TestForms.wsRM {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string porcentajeMayorista {
             get {
                 return this.porcentajeMayoristaField;
@@ -1820,7 +1851,7 @@ namespace TestForms.wsRM {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public int error {
             get {
                 return this.errorField;
@@ -1833,7 +1864,7 @@ namespace TestForms.wsRM {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string descError {
             get {
                 return this.descErrorField;

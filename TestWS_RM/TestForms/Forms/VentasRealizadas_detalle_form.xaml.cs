@@ -56,26 +56,35 @@ namespace TestForms.Forms
                     }
                 }
             }
-            venta.pasajeros = Int32.Parse(textBoxPasajeros.Text.Trim());
-            venta.origen = textBoxOrigen.Text.Trim();
-            venta.destino = textBoxDestino.Text.Trim();
-            venta.montoSinDescuento = Decimal.Parse(textBoxMontoSinDesc.Text.Trim());
-            venta.monto = Decimal.Parse(textBoxMonto.Text.Trim());
-            venta.idVenta = textBoxCodVta.Text.Trim();
-            venta.fecha = textBoxFechaVta.Text.Trim();
-            venta.descuentoPack = Decimal.Parse(textBoxDctoPack.Text.Trim());
-            venta.articulo1 = textBoxArticulo1.Text.Trim();
-            venta.cantArticulo1 = textBoxCant1.Text.Trim();
-            venta.articulo2 = textBoxArticulo2.Text.Trim();
-            venta.cantArticulo2 = textBoxCant2.Text.Trim();
-            venta.promocion = textBoxPromocion.Text.Trim();
-            venta.regla1 = textBoxRegla1.Text.Trim();
-            venta.regla2 = textBoxRegla2.Text.Trim();
+            try
+            {
+                venta.pasajeros = Int32.Parse(textBoxPasajeros.Text.Trim());
+                venta.origen = textBoxOrigen.Text.Trim();
+                venta.destino = textBoxDestino.Text.Trim();
+                venta.montoSinDescuento = Decimal.Parse(textBoxMontoSinDesc.Text.Trim());
+                venta.monto = Decimal.Parse(textBoxMonto.Text.Trim());
+                venta.idVenta = textBoxCodVta.Text.Trim();
+                venta.fecha = textBoxFechaVta.Text.Trim();
+                venta.descuentoPack = Decimal.Parse(textBoxDctoPack.Text.Trim());
+                venta.articulo1 = textBoxArticulo1.Text.Trim();
+                venta.cantArticulo1 = textBoxCant1.Text.Trim();
+                venta.articulo2 = textBoxArticulo2.Text.Trim();
+                venta.cantArticulo2 = textBoxCant2.Text.Trim();
+                venta.promocion = textBoxPromocion.Text.Trim();
+                venta.regla1 = textBoxRegla1.Text.Trim();
+                venta.regla2 = textBoxRegla2.Text.Trim();
+                    
+                ((VentasRealizadas_form)Application.Current.Windows[1]).ListaVentas.Add(venta);
+                ((VentasRealizadas_form)Application.Current.Windows[1]).listView1.Items.Add(venta.servicio);
 
-            ((VentasRealizadas_form)Application.Current.Windows[1]).ListaVentas.Add(venta);
-            ((VentasRealizadas_form)Application.Current.Windows[1]).listView1.Items.Add(venta.servicio);
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de formato");
+            }
 
-            this.Close();
+            
         }
     }
 }

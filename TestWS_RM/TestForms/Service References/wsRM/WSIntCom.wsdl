@@ -155,6 +155,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="articulo2" type="tns:Tarticulo" />
           <s:element minOccurs="0" maxOccurs="1" name="promocion" type="tns:Tpromocion" />
           <s:element minOccurs="0" maxOccurs="1" name="packDescuentos" type="tns:TpackDescuentos" />
+          <s:element minOccurs="1" maxOccurs="1" name="exclusiva" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="Tarticulo">
@@ -281,6 +282,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="detalle" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="descuento" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="legales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detalleCorto" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="porcentajeTransportista" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="porcentajeMayorista" type="s:string" />

@@ -52,9 +52,9 @@ namespace TestForms.Forms
             if (response.error != 0)
             {
                 textoRta += "ERRORES: ";
-                textoRta += "-------------------------";
-                textoRta += "Cod. de error -> " + response.error;
-                textoRta += "Descripción -> " + response.descError;
+                textoRta += "\n-------------------------";
+                textoRta += "\nCod. de error -> " + response.error;
+                textoRta += "\nDescripción -> " + response.descError;
             }
             else
             {
