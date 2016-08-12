@@ -3,9 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AplicarInt" Height="500" Width="330" Background="WhiteSmoke" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" Icon="/TestForms;component/Images/ícono.png">
     <Grid>
-        <Button Content="Agregar servicio..." Height="30" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="284" Click="button1_Click" />
+        <Button Height="30" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="284" Click="button1_Click">
+            <Grid Width="276">
+                <Image Source="/Images/addDetail1.png" Margin="235,0,0,0"></Image>
+                <TextBlock Text="Agregar servicio..." TextAlignment="Center" VerticalAlignment="Center" Margin="85,4,79,4"></TextBlock>
+            </Grid>
+        </Button>
         <ListView Height="132" HorizontalAlignment="Left" Margin="12,52,0,0" Name="listView1" VerticalAlignment="Top" Width="284" />
-        <Button Content="Enviar" Height="30" HorizontalAlignment="Left" Margin="12,195,0,0" Name="button2" VerticalAlignment="Top" Width="284" Click="button2_Click" />
+        <Button Height="30" HorizontalAlignment="Left" Margin="12,195,0,0" Name="button2" VerticalAlignment="Top" Width="284" Click="button2_Click">
+            <Grid Width="276">
+                <Image Source="/Images/send2.png" Margin="235,0,0,0"></Image>
+                <TextBlock Text="Enviar" TextAlignment="Center" VerticalAlignment="Center" Margin="111,4"></TextBlock>
+            </Grid>
+        </Button>
         <ScrollViewer Height="215" HorizontalAlignment="Left" Margin="12,234,0,0" Name="scrollViewer1" VerticalAlignment="Top" 
                       Width="284"
                       VerticalScrollBarVisibility="Visible">

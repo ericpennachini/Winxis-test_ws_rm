@@ -64,8 +64,9 @@ namespace TestForms.Forms
             servicio.agencia = textBoxAgencia.Text.Trim();
 
             ((AplicarInt_form)Application.Current.Windows[1]).ListaServicios.Add(servicio);
-            ((AplicarInt_form)Application.Current.Windows[1]).listView1.Items.Add(servicio.servicio);
-
+            ((AplicarInt_form)Application.Current.Windows[1]).listView1.Items.Add(
+                (((AplicarInt_form)Application.Current.Windows[1]).listView1.Items.Count + 1) + "- " + servicio.servicio);
+            ((AplicarInt_form)Application.Current.Windows[1]).Activate();
             this.Close();
         }
     }

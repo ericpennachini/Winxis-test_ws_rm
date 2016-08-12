@@ -75,7 +75,8 @@ namespace TestForms.Forms
                 venta.regla2 = textBoxRegla2.Text.Trim();
                     
                 ((VentasRealizadas_form)Application.Current.Windows[1]).ListaVentas.Add(venta);
-                ((VentasRealizadas_form)Application.Current.Windows[1]).listView1.Items.Add(venta.servicio);
+                ((VentasRealizadas_form)Application.Current.Windows[1]).listView1.Items.Add(
+                    (((VentasRealizadas_form)Application.Current.Windows[1]).listView1.Items.Count + 1) + "- " + venta.servicio);
 
                 this.Close();
             }

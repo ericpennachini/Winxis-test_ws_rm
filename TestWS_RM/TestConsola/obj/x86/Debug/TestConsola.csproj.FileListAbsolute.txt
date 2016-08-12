@@ -3,3 +3,4 @@ D:\Testing WS REVENUE MANAGMENT\TestWS_RM\TestConsola\bin\Debug\TestConsola.exe
 D:\Testing WS REVENUE MANAGMENT\TestWS_RM\TestConsola\bin\Debug\TestConsola.pdb
 D:\Testing WS REVENUE MANAGMENT\TestWS_RM\TestConsola\obj\x86\Debug\TestConsola.exe
 D:\Testing WS REVENUE MANAGMENT\TestWS_RM\TestConsola\obj\x86\Debug\TestConsola.pdb
+C:\Users\Eric\Documents\GitHub\Winxis-test_ws_rm\TestWS_RM\TestConsola\obj\x86\Debug\TestConsola.exe
