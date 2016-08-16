@@ -226,8 +226,9 @@
     <Resource Include="Images\send1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Plus.png" />
     <Content Include="Images\SVG\About.svg" />
-    <Content Include="Images\SVG\Add User.svg" />
+    <Resource Include="Images\SVG\Add User.svg" />
     <Content Include="Images\SVG\Address Book.svg" />
     <Content Include="Images\SVG\Administrator.svg" />
     <Content Include="Images\SVG\Alpha.svg" />

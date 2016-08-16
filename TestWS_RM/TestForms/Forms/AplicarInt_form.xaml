@@ -5,7 +5,7 @@
     <Grid>
         <Button Height="30" HorizontalAlignment="Left" Margin="12,12,0,0" Name="button1" VerticalAlignment="Top" Width="284" Click="button1_Click">
             <Grid Width="276">
-                <Image Source="/Images/addDetail1.png" Margin="235,0,0,0"></Image>
+                <Image Source="/Images/plus.png"  Margin="235,0,0,0" Stretch="Uniform" StretchDirection="Both"></Image>
                 <TextBlock Text="Agregar servicio..." TextAlignment="Center" VerticalAlignment="Center" Margin="85,4,79,4"></TextBlock>
             </Grid>
         </Button>

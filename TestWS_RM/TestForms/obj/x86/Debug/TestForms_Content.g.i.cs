@@ -9,7 +9,6 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/svg/about.svg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/svg/add%20user.svg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/svg/address%20book.svg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/svg/administrator.svg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/svg/alpha.svg")]
